@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="style/style.css">
 
-    <title><?php echo "SP |" .  bloginfo('name'); ?></title>
+    <title><?php echo "SP | " .  get_bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
