@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="style/style.css">
 
     <title><?php echo "SP | " .  get_bloginfo('name'); ?></title>
+=======
+    <title><?php echo "SP |" .  get_bloginfo('name'); ?></title>
+>>>>>>> c1819aaf81a82dca0cb0bb344a34ff090acf19b8
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
