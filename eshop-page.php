@@ -1,18 +1,17 @@
 <?php
 /*
-    Template name: Koncerty
+    Template name: E-shop
 */
 get_header();
 ?>
 <!--TODO: HTML kód-->
-Koncerty page
-
+Stránka s e-shopem
 
 <?php
 $query = new WP_Query(array(
     'post_type'  => 'page',
     'meta_key'   => '_wp_page_template',
-    'meta_value' => 'koncertDetail-page.php',
+    'meta_value' => 'produkt-page.php',
     'orderby'    => 'date',
     'order'      => 'DESC',
     'posts_per_page' => -1 // Získá všechny stránky
@@ -26,7 +25,7 @@ if ($query->have_posts()) {
     }
     echo '</ul>';
 } else {
-    echo '<p>Žádné koncerty nebyly nalezeny.</p>';
+    echo '<p>Žádné produkty nebyly nalezeny.</p>';
 }
 ?>
 
