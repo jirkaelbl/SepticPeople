@@ -7,13 +7,83 @@
     <link rel="stylesheet" href="style/style.css">
 
     <title><?php echo "SP | " .  get_bloginfo('name'); ?></title>
-=======
-    <title><?php echo "SP |" .  get_bloginfo('name'); ?></title>
->>>>>>> c1819aaf81a82dca0cb0bb344a34ff090acf19b8
+
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-    <nav><?php wp_nav_menu(array('theme_location' => 'primary')); ?></nav>
-</header>
+<?php  if (get_the_title() === "Ahoj všichni!")  {?>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- Odkaz pro logo nebo název webu -->
+                <a href="<?php echo home_url(); ?>" class="text-center ms-4 d-none d-lg-block">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" width="80" height="80" loading="lazy">
+                </a>
+
+                <!-- Tlačítko pro hamburger menu (mobilní zařízení) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Odkaz pro logo nebo název webu -->
+                <a href="<?php echo home_url(); ?>" class="d-block d-lg-none">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" width="80" height="80" loading="lazy">
+                </a>
+
+                <!-- Vlastní menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'main_menu',
+                        'container' => false, // Nepotřebujeme žádný další obal kolem menu
+                        'menu_class' => 'nav-menu ms-auto', // Používáme třídu pro vertikální i horizontální zobrazení
+                        'depth' => 2, // Pokud máš sub-menu (rozbalovací menu), nastav depth na 2
+                    ));
+                    ?>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<?php } else { ?>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- Odkaz pro logo nebo název webu -->
+                <a href="<?php echo home_url(); ?>" class="text-center ms-4 d-none d-lg-block">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" width="80" height="80" loading="lazy">
+                </a>
+
+                <!-- Tlačítko pro hamburger menu (mobilní zařízení) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Odkaz pro logo nebo název webu -->
+                <a href="<?php echo home_url(); ?>" class="d-block d-lg-none">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" width="80" height="80" loading="lazy">
+                </a>
+
+                <!-- Vlastní menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'main_menu',
+                        'container' => false, // Nepotřebujeme žádný další obal kolem menu
+                        'menu_class' => 'nav-menu ms-auto', // Používáme třídu pro vertikální i horizontální zobrazení
+                        'depth' => 2, // Pokud máš sub-menu (rozbalovací menu), nastav depth na 2
+                    ));
+                    ?>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<?php } ?>
+
