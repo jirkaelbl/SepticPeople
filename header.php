@@ -10,11 +10,11 @@
 
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="d-flex flex-column min-vh-100" <?php body_class(); ?>>
 <?php  if (get_the_title() === "Ahoj všichni!")  {?>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark navigace position-absolute z-3 w-100">
             <div class="container-fluid">
                 <!-- Odkaz pro logo nebo název webu -->
                 <a href="<?php echo home_url(); ?>" class="text-center ms-4 d-none d-lg-block">
