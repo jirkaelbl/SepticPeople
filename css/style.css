@@ -29,6 +29,7 @@
     padding: 6px 6px;
     display: inline-block;
     font-size: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 992px) {
@@ -74,6 +75,7 @@
 
 .helgroup-footer {
     color: #d00101;
+    transition: 0.4s ease;
 }
 
 @media (max-width: 992px) {
@@ -87,6 +89,54 @@
     }
 
 }
+
+.footer-line {
+    position: relative;
+}
+
+.footer-line::before {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 16px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: 0.3s ease;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.social-icon:hover {
+    background-color: white;
+    color: black;
+}
+
+.kontakt-button {
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.kontakt-button:hover {
+    background-color: white;
+    border: 3px solid rgba(255, 255, 255);
+    color: black;
+}
+
 
 
 /*
@@ -132,6 +182,5 @@
 .hero-text h1 {
     font-size: 8rem;
     font-weight: bold;
-    font-family: DirtyBoy;
     cursor: default;
 }
