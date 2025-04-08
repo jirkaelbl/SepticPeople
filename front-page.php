@@ -1,10 +1,14 @@
 <?php
 get_header();
 ?>
-
 <div class="hero-image">
     <img src="<?php echo get_template_directory_uri(); ?>/images/kapela_koncert.jpg" alt="Úvodní obrázek">
+
+    <div class="hero-text text-center">
+        <h1>Septic People</h1>
+    </div>
 </div>
+
 <!--TODO: HTML kód-->
 front page
 <section id="uvod">

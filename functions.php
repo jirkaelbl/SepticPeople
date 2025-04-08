@@ -41,16 +41,26 @@ function wpdocs_my_enqueue_scripts() : void {
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/style.css', true);
 
     // Načtení fontu WinkySans z googlu
-    $font_url = get_template_directory_uri() . '/assets/font_winky_sans/static/WinkySans-Regular.ttf';
+    $font_url1 = get_template_directory_uri() . '/assets/font_winky_sans/static/WinkySans-Regular.ttf';
     $custom_css = "
         @font-face {
             font-family: 'WinkySans';
-            src: url('$font_url') format('truetype');
+            src: url('$font_url1') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
         body {
             font-family: 'WinkySans', sans-serif;
+        }
+    ";
+
+    $font_url2 = get_template_directory_uri() . '/assets/font_winky_sans/static/DirtyBoy.ttf';
+    $custom_css = "
+        @font-face {
+            font-family: 'DirtyBoy';
+            src: url('$font_url2') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
     ";
 
