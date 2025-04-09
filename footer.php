@@ -1,20 +1,33 @@
 <footer class="mt-auto bg-black">
-    <div class="container-fluid row pt-3 pb-1 justify-content-center mx-auto">
-        <div class="container col-12 col-lg-4 d-flex flex-column align-items-center text-center">
-            <a href="<?php echo home_url(); ?>" class="nav-logo pb-3">
+    <div class="container row pt-3 pb-1 justify-content-center mx-auto">
+        <div class="col-12 col-lg-5 mt-3 d-flex flex-column align-items-center text-center">
+            <a href="<?php echo home_url(); ?>" class="footer-logo pb-3">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" loading="lazy">
             </a>
-
-            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mt-4 mb-3 w-100">
+        </div>
+        <div class="col-12 col-lg-7 text-center">
+            <h1 class="footer-title text-center" style="cursor: default;">Septic People</h1>
+            <div class="mx-auto text-start" style="width: fit-content;">
+                <p class="mb-1 footer-kontakt fs-4" style="cursor: default;">
+                    <i class="fa-solid fa-user pe-3" style="color: white;"></i>
+                    <a>Jan Novák</a>
+                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
+                </p>
+                <p class="mb-1 footer-kontakt fs-4" style="cursor: default;">
+                    <i class="fa-solid fa-mobile-screen-button pe-3" style="color: white;"></i>
+                    <a>+420 123 456 789</a>
+                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
+                </p>
+                <p class="mb-1 footer-kontakt fs-4">
+                    <i class="fa-solid fa-at pe-3" style="color: white;"></i>
+                    <a href="mailto:info@septicpeople.cz">info@septicpeople.cz</a>
+                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
+                </p>
+            </div>
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mt-5 mb-3 w-100">
                 <button type="button" class="btn btn-primary kontakt-button fs-5" style="width: 180px;">Pro pořadatele</button>
                 <button type="button" class="btn btn-primary kontakt-button fs-5 px-3" style="width: 180px;">Koncerty</button>
             </div>
-        </div>
-        <div class="col-lg-4">
-
-        </div>
-        <div class="col-lg-4">
-
         </div>
     </div>
 
@@ -43,8 +56,8 @@
         </div>
     </div>
     <div class="container-fluid text-center bg-black footer-line">
-        <p class="text-white mb-0 pt-3 pb-1">&copy; <?php echo "Designed and hosted by"; ?><a class="text-decoration-none helgroup-footer" href="https://helgroup.cz/"> Helgroup</a></p>
-        <p class="text-white pb-3 mb-0">&copy; <?php echo date("Y"); ?></p>
+        <p class="text-white mb-0 pt-3 pb-1" style="cursor: default;">&copy; <?php echo "Designed and hosted by"; ?><a class="text-decoration-none helgroup-footer" href="https://helgroup.cz/"> Helgroup</a></p>
+        <p class="text-white pb-3 mb-0" style="cursor: default;">&copy; <?php echo date("Y"); ?></p>
     </div>
 </footer>
 <?php wp_footer(); ?>

@@ -65,8 +65,13 @@
 }
 
 .nav-logo img {
-    width: 200px;
+    width: 160px;
     height: auto;
+    transition: 0.8s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.16);
 }
 
 /*
@@ -137,7 +142,41 @@
     color: black;
 }
 
+.footer-title {
+    color: white;
+    font-family: DirtyBoy;
+    font-size: 90px;
+}
 
+.footer-kontakt  a, p {
+    color: white;
+    text-decoration: none;
+
+}
+
+.footer-kontakt .sign {
+    opacity: 0;
+    transform: translateX(-10px); /* může být i scale nebo rotate */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    visibility: hidden;
+}
+
+.footer-kontakt:hover .sign {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+
+
+.footer-logo img {
+    width: 300px;
+    height: auto;
+    transition: 0.8s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.16);
+}
 
 /*
     ////////////// Front_page ////////////////
