@@ -1,4 +1,4 @@
-<footer class="mt-auto bg-black">
+<footer class="mt-auto bg-black" style="z-index: 999">
     <div class="container row pt-3 pb-1 justify-content-center mx-auto">
         <div class="col-12 col-lg-5 mt-3 d-flex flex-column align-items-center text-center">
             <a href="<?php echo home_url(); ?>" class="footer-logo pb-3">
@@ -8,21 +8,25 @@
         <div class="col-12 col-lg-7 text-center">
             <h1 class="footer-title text-center" style="cursor: default;">Septic People</h1>
             <div class="mx-auto text-start" style="width: fit-content;">
-                <p class="mb-1 footer-kontakt fs-4" style="cursor: default;">
-                    <i class="fa-solid fa-user pe-3" style="color: white;"></i>
-                    <a>Jan Novák</a>
-                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
-                </p>
-                <p class="mb-1 footer-kontakt fs-4" style="cursor: default;">
-                    <i class="fa-solid fa-mobile-screen-button pe-3" style="color: white;"></i>
-                    <a>+420 123 456 789</a>
-                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
-                </p>
-                <p class="mb-1 footer-kontakt fs-4">
-                    <i class="fa-solid fa-at pe-3" style="color: white;"></i>
-                    <a href="mailto:info@septicpeople.cz">info@septicpeople.cz</a>
-                    <i class="fa-solid fa-music ps-3 sign" style="color: white;"></i>
-                </p>
+                <div class="mb-2">
+                    <a class="footer-kontakt fs-4" style="cursor: default;">
+                        <i class="fa-solid fa-user pe-3" style="color: white;"></i>
+                        <span>Jan Novák</span>
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a class="footer-kontakt fs-4" href="tel:+420123456789">
+                        <i class="fa-solid fa-mobile-screen-button pe-3" style="color: white;"></i>
+                        <span>+420 123 456 789</span>
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a class="footer-kontakt fs-4" href="mailto:info@septicpeople.cz">
+                        <i class="fa-solid fa-envelope pe-3 text-white"></i>
+                        <span>info@septicpeople.cz</span>
+                    </a>
+                </div>
+
             </div>
             <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mt-5 mb-3 w-100">
                 <button type="button" class="btn btn-primary kontakt-button fs-5" style="width: 180px;">Pro pořadatele</button>

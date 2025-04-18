@@ -148,25 +148,39 @@
     font-size: 90px;
 }
 
-.footer-kontakt  a, p {
+.footer-kontakt, .footer-kontakt a {
     color: white;
     text-decoration: none;
-
 }
 
-.footer-kontakt .sign {
-    opacity: 0;
-    transform: translateX(-10px); /* může být i scale nebo rotate */
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    visibility: hidden;
+/*.footer-kontakt .sign {*/
+/*    opacity: 1;*/
+/*    transform: translateX(-10px); !* může být i scale nebo rotate *!*/
+/*    transition: opacity 0.8s ease, transform 0.8s ease;*/
+/*    !*visibility: hidden;*!*/
+/*}*/
+
+/*.footer-kontakt:hover .sign {*/
+/*    opacity: 1;*/
+/*    transform: translateX(0);*/
+/*    visibility: visible;*/
+/*}*/
+
+.footer-kontakt::after {
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    background-color: white;
+    transition: 0.5s ease all;
 }
 
-.footer-kontakt:hover .sign {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
+.footer-kontakt:hover::after {
+    width: 100%;
 }
-
 
 .footer-logo img {
     width: 300px;
@@ -222,4 +236,14 @@
     font-size: 8rem;
     font-weight: bold;
     cursor: default;
+}
+
+/*
+    ////////////// E-shop ////////////////
+ */
+.stin {
+    box-shadow: 100px 0px 100px rgba(0,0,0,0.7), -100px 0 100px rgba(0,0,0,0.7);
+}
+.kryti {
+    background-color: rgba(0,0,0,0.13);  backdrop-filter: blur(1px);
 }
