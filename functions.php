@@ -9,9 +9,151 @@
 
 
 
+/* VELIKOSTI U PRODUKTU */
+function metabox_pro_velikosti() {
+    add_meta_box(
+        'velikosti_produktu',
+        'Velikosti',
+        'zobrazit_metabox_velikosti',
+        'page',
+        'side'
+    );
+}
+add_action('add_meta_boxes', 'metabox_pro_velikosti');
+
+function zobrazit_metabox_velikosti($post) {
+    $moznosti = ['S', 'M', 'L', 'XL', 'XXL', 'OS'];
+    $vybrane = get_post_meta($post->ID, '_velikosti_produktu', true);
+    if (!is_array($vybrane)) $vybrane = [];
+
+    foreach ($moznosti as $velikost) {
+        $checked = in_array($velikost, $vybrane) ? 'checked' : '';
+        echo "<label><input type='checkbox' name='velikosti_produktu[]' value='$velikost' $checked> $velikost</label><br>";
+    }
+}
+
+function ulozit_velikosti_produktu($post_id) {
+    if (isset($_POST['velikosti_produktu'])) {
+        $vybrane = array_map('sanitize_text_field', $_POST['velikosti_produktu']);
+        update_post_meta($post_id, '_velikosti_produktu', $vybrane);
+    } else {
+        delete_post_meta($post_id, '_velikosti_produktu');
+    }
+}
+add_action('save_post', 'ulozit_velikosti_produktu');
+
+
+
+/* OBRÁZKY DETAIL PRODUTKU */
+// Pole pro více obrázků
+function metabox_pro_obrazky() {
+    add_meta_box(
+        'obrazky_produktu',
+        'Obrázky produktu (více)',
+        'zobrazit_metabox_obrazky',
+        'page',
+        'normal',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'metabox_pro_obrazky');
+
+function zobrazit_metabox_obrazky($post) {
+    $image_ids = get_post_meta($post->ID, '_obrazky_produktu', true);
+    if (!is_array($image_ids)) $image_ids = [];
+
+    echo '<div id="obrazky-produkty-wrap">';
+    foreach ($image_ids as $id) {
+        echo wp_get_attachment_image($id, 'thumbnail');
+        echo '<input type="hidden" name="obrazky_produktu[]" value="' . esc_attr($id) . '">';
+    }
+    echo '</div>';
+    echo '<button type="button" class="button" id="pridat-obrazek">Přidat obrázek</button>';
+
+    // JS pro výběr obrázků
+    ?>
+    <script>
+        jQuery(document).ready(function($) {
+            $('#pridat-obrazek').click(function(e) {
+                e.preventDefault();
+                var custom_uploader = wp.media({
+                    title: 'Vyber obrázky',
+                    multiple: true
+                }).on('select', function() {
+                    var selection = custom_uploader.state().get('selection');
+                    selection.map(function(file) {
+                        $('#obrazky-produkty-wrap').append(
+                            '<input type="hidden" name="obrazky_produktu[]" value="' + file.id + '">' +
+                            '<img src="' + file.attributes.url + '" style="max-width:100px;margin:5px;">'
+                        );
+                    });
+                }).open();
+            });
+        });
+    </script>
+    <?php
+}
+
+function ulozit_obrazky_produktu($post_id) {
+    if (isset($_POST['obrazky_produktu'])) {
+        $ids = array_map('intval', $_POST['obrazky_produktu']);
+        update_post_meta($post_id, '_obrazky_produktu', $ids);
+    }
+}
+add_action('save_post', 'ulozit_obrazky_produktu');
+
+
+
+/* CENA DEAIL PRODUKTU */
+// Přidání vlastního metaboxu pro stránku (např. cena)
+function pridat_metabox_pro_cenu() {
+    global $post;
+
+    // Ověření, že pracujeme s editací stránky
+    if (isset($post)) {
+        $template = get_page_template_slug($post->ID);
+
+        // Zobrazit metabox jen pro šablonu 'nazevSablony.php'
+        if ($template === 'produkt-page.php') {
+            add_meta_box(
+                'cena_metabox',
+                'Cena produktu',
+                'zobrazit_cenu_input',
+                'page',
+                'side',
+                'default'
+            );
+        }
+    }
+}
+add_action('add_meta_boxes', 'pridat_metabox_pro_cenu');
+
+
+// Obsah metaboxu
+function zobrazit_cenu_input($post) {
+    $cena = get_post_meta($post->ID, '_cena_produktu', true);
+    ?>
+    <label for="cena_produktu">Zadej cenu produktu v Kč:</label>
+    <input type="text" name="cena_produktu" id="cena_produktu" value="<?php echo esc_attr($cena); ?>" style="width: 100%;" />
+    <?php
+}
+
+// Uložení ceny
+function ulozit_cenu_input($post_id) {
+    if (array_key_exists('cena_produktu', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_cena_produktu',
+            sanitize_text_field($_POST['cena_produktu'])
+        );
+    }
+}
+add_action('save_post', 'ulozit_cenu_input');
+
+
+
 add_theme_support('title-tag');
-
-
+add_theme_support('post-thumbnails', ['post', 'page']);
 
 function custom_theme_setup() {
     register_nav_menus(array(
