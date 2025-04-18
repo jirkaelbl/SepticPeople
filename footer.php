@@ -2,11 +2,11 @@
     <div class="container row pt-3 pb-1 justify-content-center mx-auto">
         <div class="col-12 col-lg-5 mt-3 d-flex flex-column align-items-center text-center">
             <a href="<?php echo home_url(); ?>" class="footer-logo pb-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" loading="lazy">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" alt="Logo" loading="lazy">
             </a>
         </div>
-        <div class="col-12 col-lg-7 text-center">
-            <h1 class="footer-title text-center" style="cursor: default;">Septic People</h1>
+        <div class="col-12 col-lg-7 mt-lg-0 mt-3 text-center">
+            <img class="footer-title" src="<?php echo get_template_directory_uri(); ?>/images/septic_people_nadpis.png" alt="Logo_footer" loading="lazy">
             <div class="mx-auto text-start" style="width: fit-content;">
                 <p class="mb-1 footer-kontakt fs-4" style="cursor: default;">
                     <i class="fa-solid fa-user pe-3" style="color: white;"></i>
@@ -39,9 +39,6 @@
                 </a>
                 <a class="text-decoration-none pt-lg-0 pt-3 pb-lg-0 pb-3" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fseptic_people%3Figsh%3DMWF4MXN3NHNqbjV5bw%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAAR5Cd6a4qZVI-1T_OoIOcAe0r9pcRP-u-5VJ6csNgKf3-ff-PhJDAnyDSpIyjg_aem_o6p7GC9GbJt424OzLihzqQ&h=AT3vmYaic0YiwUxy3vk4aj9D6oBSkoTXHPJ062Vobyxah6DW6z8M9Eo3smYxSH2W2OFm8tX5d0SCATjB-irXKzQa9ZuCyC_j1MKZvJ21QbUe-SuRfwjxz_M3uxTqjlhMt_gp5Q">
                     <i class="fa-brands fa-instagram social-icon"></i>
-                </a>
-                <a class="text-decoration-none pt-lg-0 pt-3 pb-lg-0 pb-3" href="#">
-                    <i class="fa-solid fa-envelope social-icon"></i>
                 </a>
             </div>
             <div class="mt-lg-0 mt-3">

@@ -2,11 +2,11 @@
 get_header();
 ?>
 <div class="hero-image">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/kapela_koncert.jpg" alt="Úvodní obrázek">
-
-    <div class="hero-text text-center">
-        <h1>Septic People</h1>
-    </div>
+    <video autoplay muted loop playsinline preload="auto">
+        <source src="<?php echo get_template_directory_uri(); ?>/videos/Septic_V4.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
+    <div class="arrow-down"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
 </div>
 
 <!--TODO: HTML kód-->
