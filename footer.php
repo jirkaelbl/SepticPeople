@@ -2,11 +2,11 @@
     <div class="container row pt-3 pb-1 justify-content-center mx-auto">
         <div class="col-12 col-lg-5 mt-3 d-flex flex-column align-items-center text-center">
             <a href="<?php echo home_url(); ?>" class="footer-logo pb-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" alt="Logo" loading="lazy">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" alt="Logo" loading="lazy">
             </a>
         </div>
         <div class="col-12 col-lg-7 mt-lg-0 mt-3 text-center">
-            <img class="footer-title" src="<?php echo get_template_directory_uri(); ?>/images/septic_people_nadpis.png" alt="Logo_footer" loading="lazy">
+            <img class="footer-title" src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_nadpis.png" alt="Logo_footer" loading="lazy">
             <div class="mx-auto text-start" style="width: fit-content;">
                 <div class="mb-2">
                     <a class="footer-kontakt fs-4" style="cursor: default;">
@@ -29,8 +29,8 @@
 
             </div>
             <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mt-5 mb-3 w-100">
-                <button type="button" class="btn btn-primary kontakt-button fs-5" style="width: 180px;">Pro pořadatele</button>
-                <button type="button" class="btn btn-primary kontakt-button fs-5 px-3" style="width: 180px;">Koncerty</button>
+                <button type="button" class="btn btn-primary kontakt-button fs-5" onclick="window.location.href='proPoradatele-page.php'" style="width: 180px;">Pro pořadatele</button>
+                <button type="button" class="btn btn-primary kontakt-button fs-5 px-3" onclick="window.location.href='koncerty-page.php'" style="width: 180px;">Koncerty</button>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="mt-lg-0 mt-3">
-                <a class="text-decoration-none pt-lg-0 pt-3 pb-lg-0 pb-3" href="#">
+                <a class="text-decoration-none pt-lg-0 pt-3 pb-lg-0 pb-3" href="https://www.youtube.com/channel/UC-8aFVv27SjUdcPMuE4ykNA">
                     <i class="fa-brands fa-youtube social-icon"></i>
                 </a>
                 <a class="text-decoration-none pt-lg-0 pt-3 pb-lg-0 pb-3" href="#">

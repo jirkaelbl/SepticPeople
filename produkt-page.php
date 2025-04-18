@@ -4,7 +4,7 @@
 */
 get_header();
 ?>
-<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/kapela_koncert.jpg'); background-size: cover;">
+<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/background/kapela_koncert.jpg'); background-size: cover;">
     <div class="kryti">
         <div class="container col-9 stin" style="background-color: white;">
             <div class="row pt-5 pb-5 col-11 m-auto">

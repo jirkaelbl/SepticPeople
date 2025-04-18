@@ -264,5 +264,22 @@ function customizer($wp_customize){
 
 add_theme_support( 'post-thumbnails', array( 'post' ) );
 
+add_theme_support('title-tag');
+
+add_filter('document_title_parts', 'upravit_muj_title');
+
+function upravit_muj_title($title) {
+
+    unset($title['site']);
+
+    if (is_front_page()) {
+        $title['title'] = 'SP | Home';
+    } else {
+        $title['title'] = 'SP | ' . $title['title'];
+    }
+
+    return $title;
+}
+
 
 ?>

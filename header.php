@@ -6,9 +6,9 @@
 
     <link rel="stylesheet" href="style/style.css">
 
-    <title><?php echo "SP | " .  get_bloginfo('name'); ?></title>
-
     <?php wp_head(); ?>
+
+
 </head>
 <body class="d-flex flex-column min-vh-100" <?php body_class(); ?>>
 <?php  if (get_the_title() === "Ahoj všichni!")  {?>
@@ -20,8 +20,8 @@
                 <!-- Odkaz pro logo nebo název webu -->
                 <div class="col-lg-4 col-md-2 col-sm-1 d-flex justify-content-center align-items-center">
                     <a href="<?php echo home_url(); ?>" class="nav-logo text-center pb-3">
-                        <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" as="image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" alt="Logo" loading="lazy">
+                        <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" as="image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" alt="Logo" loading="lazy">
                     </a>
                 </div>
 
@@ -47,8 +47,8 @@
 
                 <!-- Odkaz pro logo nebo název webu -->
                 <a href="<?php echo home_url(); ?>" class="justify-content-center mx-auto mt-1">
-                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" as="image">
-                    <img style="margin-left: -46px;" src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.png" alt="Logo" width="80" height="80" loading="lazy">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" as="image">
+                    <img style="margin-left: -46px;" src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" alt="Logo" width="80" height="80" loading="lazy">
                 </a>
 
                 <!-- Vlastní menu -->
@@ -76,8 +76,8 @@
                 <!-- Odkaz pro logo nebo název webu -->
                 <div class="col-lg-4 col-md-2 col-sm-1 d-flex justify-content-center align-items-center">
                     <a href="<?php echo home_url(); ?>" class="nav-logo text-center pb-3">
-                        <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" loading="lazy">
+                        <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" as="image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" alt="Logo" loading="lazy">
                     </a>
                 </div>
 
@@ -103,8 +103,8 @@
 
                 <!-- Odkaz pro logo nebo název webu -->
                 <a href="<?php echo home_url(); ?>" class="justify-content-center mx-auto mt-1">
-                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" as="image">
-                    <img style="margin-left: -46px;" src="<?php echo get_template_directory_uri(); ?>/images/septic_people_logo.jpg" alt="Logo" width="80" height="80" loading="lazy">
+                    <link rel="preload_image" href="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" as="image">
+                    <img style="margin-left: -46px;" src="<?php echo get_template_directory_uri(); ?>/images/header_and_footer/septic_people_logo.png" alt="Logo" width="80" height="80" loading="lazy">
                 </a>
 
                 <!-- Vlastní menu -->
