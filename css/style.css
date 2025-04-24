@@ -276,3 +276,31 @@
 .kryti {
     background-color: rgba(0, 0, 0, 0.16);  backdrop-filter: blur(1px);
 }
+
+
+/*
+    ////////////// Koncerty ////////////////
+ */
+.koncert-card {
+
+}
+
+.koncert-date {
+    width: 30vw;
+}
+.koncert-date div {
+    font-size: 1.5rem!important;
+}
+
+@media screen and (max-width: 1024px) {
+    .koncert-date {
+        min-width: 40vw;
+    }
+    .koncert-date div {
+        font-size: 1rem!important;
+    }
+    .koncert-place {
+        font-size: 0.7rem!important;;
+    }
+
+}

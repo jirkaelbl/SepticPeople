@@ -7,17 +7,110 @@
 // }
 // add_action('wp_enqueue_scripts', 'moje_sablona_scripty');
 
+/* DATUM KONÁNÍ KONCERTU */
+function pridat_metabox_koncert_datum() {
+    global $post;
+
+    if (!isset($post) || get_post_type($post) !== 'page') return;
+
+    $template = get_page_template_slug($post->ID);
+
+    if ($template === 'koncertDetail-page.php') {
+        add_meta_box(
+            'koncert_datum_metabox',
+            'Datum a čas koncertu',
+            'zobrazit_input_koncert_datum',
+            'page',
+            'normal',
+            'default'
+        );
+    }
+}
+add_action('add_meta_boxes', 'pridat_metabox_koncert_datum');
+
+function zobrazit_input_koncert_datum($post) {
+    $hodnota = get_post_meta($post->ID, '_koncert_datum', true);
+    $value = '';
+
+    if (!empty($hodnota)) {
+        // Převod z uloženého formátu na HTML5 validní (Y-m-d\TH:i)
+        $timestamp = strtotime($hodnota);
+        $value = date('Y-m-d\TH:i', $timestamp);
+    }
+
+    echo '<input type="datetime-local" name="koncert_datum" value="' . esc_attr($value) . '" style="width: 100%;">';
+}
+
+function ulozit_koncert_datum($post_id) {
+    if (isset($_POST['koncert_datum'])) {
+        $datetime = sanitize_text_field($_POST['koncert_datum']);
+        // Uložíme jako formát: Y-m-d H:i
+        update_post_meta($post_id, '_koncert_datum', date('Y-m-d H:i', strtotime($datetime)));
+    }
+}
+add_action('save_post', 'ulozit_koncert_datum');
+
+
+
+/* MÍSTO KONÁNÍ KONCERTU */
+function pridat_metabox_misto_konani() {
+    global $post;
+
+    // Ověříme, že jsme ve správném typu postu a máme post objekt
+    if (!isset($post) || get_post_type($post) !== 'page') return;
+
+    // Získáme použitou šablonu
+    $template = get_page_template_slug($post->ID);
+
+    // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
+    if ($template === 'koncertDetail-page.php') {
+        add_meta_box(
+            'misto_konani_metabox',
+            'Místo konání',
+            'zobrazit_input_misto_konani',
+            'page',
+            'normal',
+            'default'
+        );
+    }
+}
+add_action('add_meta_boxes', 'pridat_metabox_misto_konani');
+
+// Vykreslení pole
+function zobrazit_input_misto_konani($post) {
+    $misto = get_post_meta($post->ID, '_koncert_adresa', true);
+    echo '<label for="misto_konani">Zadej místo konání koncertu:</label>';
+    echo '<input type="text" id="misto_konani" name="misto_konani" value="' . esc_attr($misto) . '" style="width:100%;" />';
+}
+
+// Uložení pole
+function ulozit_misto_konani($post_id) {
+    if (array_key_exists('misto_konani', $_POST)) {
+        update_post_meta($post_id, '_koncert_adresa', sanitize_text_field($_POST['misto_konani']));
+    }
+}
+add_action('save_post', 'ulozit_misto_konani');
+
+
+
 
 
 /* VELIKOSTI U PRODUKTU */
 function metabox_pro_velikosti() {
-    add_meta_box(
-        'velikosti_produktu',
-        'Velikosti',
-        'zobrazit_metabox_velikosti',
-        'page',
-        'side'
-    );
+    // Získáme použitou šablonu
+    $template = get_page_template_slug($post->ID);
+
+    // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
+    if ($template === 'produkt-page.php') {
+        add_meta_box(
+            'velikosti_produktu',
+            'Velikosti',
+            'zobrazit_metabox_velikosti',
+            'page',
+            'side'
+        );
+    }
+
 }
 add_action('add_meta_boxes', 'metabox_pro_velikosti');
 
@@ -47,14 +140,21 @@ add_action('save_post', 'ulozit_velikosti_produktu');
 /* OBRÁZKY DETAIL PRODUTKU */
 // Pole pro více obrázků
 function metabox_pro_obrazky() {
-    add_meta_box(
-        'obrazky_produktu',
-        'Obrázky produktu (více)',
-        'zobrazit_metabox_obrazky',
-        'page',
-        'normal',
-        'default'
-    );
+    // Získáme použitou šablonu
+    $template = get_page_template_slug($post->ID);
+
+    // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
+    if ($template === 'produkt-page.php') {
+        add_meta_box(
+            'obrazky_produktu',
+            'Obrázky produktu (více)',
+            'zobrazit_metabox_obrazky',
+            'page',
+            'normal',
+            'default'
+        );
+    }
+
 }
 add_action('add_meta_boxes', 'metabox_pro_obrazky');
 
