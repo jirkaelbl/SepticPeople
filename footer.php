@@ -29,8 +29,8 @@
 
             </div>
             <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mt-5 mb-3 w-100">
-                <button type="button" class="btn btn-primary kontakt-button fs-5" onclick="window.location.href='proPoradatele-page.php'" style="width: 180px;">Pro pořadatele</button>
-                <button type="button" class="btn btn-primary kontakt-button fs-5 px-3" onclick="window.location.href='koncerty-page.php'" style="width: 180px;">Koncerty</button>
+                <button type="button" class="btn btn-primary kontakt-button fs-5" onclick="window.location.href='<?php echo get_permalink( get_page_by_path( 'pro-poradatele' ) ); ?>'" style="width: 180px;">Pro pořadatele</button>
+                <button type="button" class="btn btn-primary kontakt-button fs-5 px-3" onclick="window.location.href='<?php echo get_permalink( get_page_by_path( 'koncerty' ) ); ?>'" style="width: 180px;">Koncerty</button>
             </div>
         </div>
     </div>

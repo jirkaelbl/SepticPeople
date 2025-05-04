@@ -304,3 +304,33 @@
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about, .gallery, .concerts, .contact {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 30%;
+    height: auto;
+}
