@@ -97,18 +97,21 @@ add_action('save_post', 'ulozit_misto_konani');
 
 /* VELIKOSTI U PRODUKTU */
 function metabox_pro_velikosti() {
+    global $post;
     // Získáme použitou šablonu
-    $template = get_page_template_slug($post->ID);
+    if ($post instanceof WP_Post && !empty($post->ID)) {
+        $template = get_page_template_slug($post->ID);
 
-    // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
-    if ($template === 'produkt-page.php') {
-        add_meta_box(
-            'velikosti_produktu',
-            'Velikosti',
-            'zobrazit_metabox_velikosti',
-            'page',
-            'side'
-        );
+        // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
+        if ($template === 'produkt-page.php') {
+            add_meta_box(
+                'velikosti_produktu',
+                'Velikosti',
+                'zobrazit_metabox_velikosti',
+                'page',
+                'side'
+            );
+        }
     }
 
 }
@@ -139,22 +142,24 @@ add_action('save_post', 'ulozit_velikosti_produktu');
 
 /* OBRÁZKY DETAIL PRODUTKU */
 // Pole pro více obrázků
-function metabox_pro_obrazky() {
+function metabox_pro_obrazky($post) {
+    global $post;
     // Získáme použitou šablonu
-    $template = get_page_template_slug($post->ID);
+    if ($post instanceof WP_Post && !empty($post->ID)) {
+        $template = get_page_template_slug($post->ID);
 
-    // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
-    if ($template === 'produkt-page.php') {
-        add_meta_box(
-            'obrazky_produktu',
-            'Obrázky produktu (více)',
-            'zobrazit_metabox_obrazky',
-            'page',
-            'normal',
-            'default'
-        );
+        // Pokud stránka používá konkrétní šablonu, zobrazíme metabox
+        if ($template === 'produkt-page.php') {
+            add_meta_box(
+                'obrazky_produktu',
+                'Obrázky produktu (více)',
+                'zobrazit_metabox_obrazky',
+                'page',
+                'normal',
+                'default'
+            );
+        }
     }
-
 }
 add_action('add_meta_boxes', 'metabox_pro_obrazky');
 
