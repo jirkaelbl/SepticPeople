@@ -123,5 +123,7 @@
 
     </header>
 
+    <script src="js/scrolled.js"></script>
+
 <?php } ?>
 

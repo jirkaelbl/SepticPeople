@@ -1,9 +1,24 @@
+/*.background_image {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background/koncert.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}*/
+
 /*
     ////////////// Header ////////////////
  */
 
 .navigace {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.navigace.scrolled {
+    background-color: black;
+    padding: 0.5rem 0;
 }
 
 .nav-menu {

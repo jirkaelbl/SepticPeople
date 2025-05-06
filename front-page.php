@@ -10,29 +10,33 @@ get_header();
 
 <!--TODO: HTML kód-->
 
-<section id="kapela">
-    <h1>Info o kapele</h1>
-</section>
+<div class="background_image">
+    <section id="kapela">
+        <h1>Info o kapele</h1>
+    </section>
 
-<section id="spotify">
-    <h1>Přehrávač pro spotify</h1>
-</section>
+    <section id="spotify">
+        <h1>Přehrávač pro spotify</h1>
+    </section>
 
-<section id="koncerty">
-    <h1>Prvním 5 koncertů ze seznamu a pak zbytek přes tlačítko</h1>
-</section>
+    <section id="koncerty">
+        <h1>Prvním 5 koncertů ze seznamu a pak zbytek přes tlačítko</h1>
+    </section>
 
-<section id="aktuality">
-    <h1>Přehled základních aktualit</h1>
-</section>
+    <section id="aktuality">
+        <h1>Přehled základních aktualit</h1>
+    </section>
 
-<section id="promo">
-    <h1>Sociální sítě</h1>
-</section>
+    <section id="promo">
+        <h1>Sociální sítě</h1>
+    </section>
 
-<section id="promo">
-    <h1>PROMO</h1>
-</section>
+    <section id="promo">
+        <h1>PROMO</h1>
+    </section>
+</div>
+
+
 
 
 
